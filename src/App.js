@@ -1,17 +1,33 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Map from './components/Map';
+import MapComponent from './components/Map/Map';
+import Display from './components/Display Panel/Display';
 
+const style = {
+  height: '100vh',
+  width: '50vh',
+  color: 'green' 
+}
+
+const displayCompStyle = {
+  height: '40vh'
+}
+
+const mapCompStyle = {
+  height: '60vh',
+  width: '100%'
+}
 function App() {
   return (
-    <div className="App">
-    <h1>weather app</h1>
-    
-      <div>
-        <Map/>
-      </div>
-    </div>
+      <main className = "container "  >
+        <div className = 'border border-danger' style={displayCompStyle}>
+          <Display/>
+        </div>
+        <div className = 'border border-primary' style = {mapCompStyle} >
+        <MapComponent/>
+        </div>   
+      </main>
   );
 }
 
