@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MapComponent from './components/Map/Map';
 import Display from './components/Display Panel/Display';
+
 
 const style = {
   height: '100vh',
