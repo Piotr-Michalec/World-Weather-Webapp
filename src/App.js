@@ -5,6 +5,7 @@ import MapComponent from './components/Map/Map';
 import Display from './components/Display Panel/Display';
 
 
+
 const style = {
   height: '100vh',
   width: '50vh',
@@ -20,13 +21,24 @@ const mapCompStyle = {
   width: '100%'
 }
 function App() {
+
+  const [coordinates, updateCoordinates] = useState({lat:'',lng:''});
+
+console.log((coordinates));
+
+ const updateCoordinatesFromMap = (clickCoordinates) =>
+ {updateCoordinates({lat:clickCoordinates.latLng.lat(),lng:clickCoordinates.latLng.lng()})};
+
   return (
       <main className = "container "  >
         <div className = 'border border-danger' style={displayCompStyle}>
           <Display/>
+          <h1>{coordinates.lat}</h1>
+          <h1>{coordinates.lng}</h1>
+         
         </div>
         <div className = 'border border-primary' style = {mapCompStyle} >
-        <MapComponent/>
+        <MapComponent updateCoordinatesFromMap = {updateCoordinatesFromMap} />
         </div>   
       </main>
   );
