@@ -9,7 +9,7 @@ const defLng = 20.616403;
 const MapComponent = compose(
   withProps({
     googleMapURL:
-     `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=`,
+     `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=KEY`,
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `100%` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -20,8 +20,7 @@ const MapComponent = compose(
   <GoogleMap
     defaultZoom={10}
     defaultCenter={{lat: defLat,lng: defLng }}
-    //onClick={(e)=>props.onMapClick(e)}
-    //when map is clicked, get click coordinates and pass them to App.js
+    //when map is clicked, get click coordinates and pass them to state in App.js
     onClick={(e)=>{props.updateCoordinatesFromMap(e)}}
     > 
   </GoogleMap>

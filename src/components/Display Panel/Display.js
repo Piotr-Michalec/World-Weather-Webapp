@@ -1,9 +1,11 @@
 import React from 'react';
+import Weather from './Weather';
 
-const Display = () =>{
+const Display = props =>{
     return(
       <div>
-          <h1>Display</h1>
+          
+          <Weather lat={props.coordinates.lat} lng={props.coordinates.lng}/>
       </div>
     );
 };

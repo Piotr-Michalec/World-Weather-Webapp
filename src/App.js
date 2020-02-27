@@ -3,7 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import MapComponent from './components/Map/Map';
 import Display from './components/Display Panel/Display';
-
+//temporary location, use geolocation later
+const defLat = 50.258839;
+const defLng = 20.616403;
 
 
 const style = {
@@ -20,25 +22,21 @@ const mapCompStyle = {
   height: '60vh',
   width: '100%'
 }
+
 function App() {
 
-  const [coordinates, updateCoordinates] = useState({lat:'',lng:''});
+  const [coordinates, updateCoordinates] = useState({lat:defLat,lng:defLng});
 
-console.log((coordinates));
-
- const updateCoordinatesFromMap = (clickCoordinates) =>
- {updateCoordinates({lat:clickCoordinates.latLng.lat(),lng:clickCoordinates.latLng.lng()})};
+  const updateCoordinatesFromMap = (clickCoordinates) =>
+  {updateCoordinates({lat:clickCoordinates.latLng.lat(),lng:clickCoordinates.latLng.lng()})};
 
   return (
       <main className = "container "  >
         <div className = 'border border-danger' style={displayCompStyle}>
-          <Display/>
-          <h1>{coordinates.lat}</h1>
-          <h1>{coordinates.lng}</h1>
-         
+          <Display coordinates={coordinates}/>
         </div>
         <div className = 'border border-primary' style = {mapCompStyle} >
-        <MapComponent updateCoordinatesFromMap = {updateCoordinatesFromMap} />
+          <MapComponent updateCoordinatesFromMap = {updateCoordinatesFromMap} />
         </div>   
       </main>
   );
