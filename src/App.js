@@ -8,6 +8,7 @@ const defLat = 50.258839;
 const defLng = 20.616403;
 
 
+
 const style = {
   height: '100vh',
   width: '50vh',
@@ -32,10 +33,10 @@ function App() {
 
   return (
       <main className = "container "  >
-        <div className = 'border border-danger' style={displayCompStyle}>
+        <div className = '' style={displayCompStyle}>
           <Display coordinates={coordinates}/>
         </div>
-        <div className = 'border border-primary' style = {mapCompStyle} >
+        <div className = '' style = {mapCompStyle} >
           <MapComponent updateCoordinatesFromMap = {updateCoordinatesFromMap} />
         </div>   
       </main>
