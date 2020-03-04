@@ -7,6 +7,7 @@ const style = {
 }
 
 const SmallData = props =>{
+    
     return(
         <div className = 'd-flex flex-column align-items-center justify-content-between' style = {style}>
             <p>{props.type}</p>
