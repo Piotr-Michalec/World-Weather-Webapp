@@ -4,7 +4,11 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 //default map position
 const defLat = 50.258839;
 const defLng = 20.616403;
+<<<<<<< HEAD
 const mapApiKey = `${process.env.REACT_APP_MAP_API_KEY}`;
+=======
+
+>>>>>>> b8ab2edf701aa84e047b2230a5338ff3752cfb16
 
 const MapComponent = compose(
   withProps({
