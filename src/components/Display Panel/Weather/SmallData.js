@@ -1,17 +1,23 @@
 import React from 'react';
 
-const style = {
+const pTypeStyle = {
     
-    fontSize: '2vw',
-    color: 'white'
+    fontSize: '1rem',
+    color: 'white',
+    textDecoration: 'underline'
 }
 
+const pValueStyle = {
+
+    fontSize: '2vh',
+    color: 'white'
+}
 const SmallData = props =>{
     
     return(
-        <div className = 'd-flex flex-column align-items-center justify-content-between' style = {style}>
-            <p>{props.type}</p>
-            <p>{props.value}</p>
+        <div className = 'd-flex flex-column align-items-center justify-content-end '>
+            <p style = {pTypeStyle}>{props.type}</p>
+            <p style = {pValueStyle}>{props.value}</p>
         </div>
     );
 };

@@ -4,18 +4,11 @@ import Skycons from 'react-skycons';
 
 
 const IconComp = props => {
- console.log('icon', props)
+  useEffect(()=>{
+    let currentIcon = props.value.replace(/-/g, "_").toUpperCase();
+     setIconType(currentIcon)
+   },[props])
   const[iconType, setIconType]=useState('');
-  
-
- useEffect(()=>{
-  let currentIcon = props.value.replace(/-/g, "_").toUpperCase();
-   setIconType(currentIcon)
- },[props])
-
- 
-console.log('ccc',iconType, typeof(iconType))
-
     return(
         <div>
         <Skycons 
@@ -23,7 +16,6 @@ console.log('ccc',iconType, typeof(iconType))
         icon={iconType} 
         autoplay={true}
       />
-   
       </div>
     );
 };
