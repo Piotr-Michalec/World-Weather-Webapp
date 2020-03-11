@@ -20,18 +20,9 @@ const defLat = 51.4934;
 const defLng = 0.0098;
 
 
-
-
-
-
-
-const displayCompStyle = {
-  height: '40vh'
-}
-
 const mapCompStyle = {
-  height: '40%',
-  width: '100',
+ // height: '40%',
+
   
 }
 
@@ -97,12 +88,12 @@ function App() {
   }
 
   return (
-      <main className = "container-fluid p-0 " style = {style} >
+      <main className = "container-fluid p-0 align-content-center " style = {style} >
        
         <div className = '' >
           <Display coordinates={coordinates} changeBackground = {changeBackground}/>
         </div>
-        <div className = ' mx-md-5 p-md-5 ' style={mapCompStyle} >
+        <div className = 'map-component' style={mapCompStyle} >
         <MapComponent updateCoordinatesFromMap = {updateCoordinatesFromMap} />
         
         </div> 

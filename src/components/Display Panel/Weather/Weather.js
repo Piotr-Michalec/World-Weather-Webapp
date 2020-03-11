@@ -6,7 +6,7 @@ const weatherApiKey = `${process.env.REACT_APP_WEATHER_API_KEY}`;
 
 const Weather = props =>{
 
-const [weatherData, updateWeatherData] = useState({icon:'CLOUDY',temperature: 123})//fix here
+const [weatherData, updateWeatherData] = useState({icon:'CLOUDY',summary: 'Wait for it...'})//fix here
 //when coordinates in state update, fetch data from dark sky api
     useEffect(()=>{
       getWeatherInfo();
@@ -23,7 +23,10 @@ const getWeatherInfo = () =>{
       .then(data=>{
        (updateWeatherData(data.currently))
        props.changeBackground(data.currently) //send weather data to changeBackground function in App.js
-    });
+    })
+    .catch(error=>updateWeatherData({icon:'CLOUDY',summary: 'Oops, something is wrong. Try again.'})
+    )
+    
 }; 
     return(
         <div className = 'h-100'>

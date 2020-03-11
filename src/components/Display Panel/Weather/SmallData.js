@@ -2,9 +2,10 @@ import React from 'react';
 
 const pTypeStyle = {
     
-    fontSize: '1rem',
+    fontSize: '1.5vh',
     color: 'white',
-    textDecoration: 'underline'
+    textDecoration: 'underline',
+    marginBottom: '3px'
 }
 
 const pValueStyle = {

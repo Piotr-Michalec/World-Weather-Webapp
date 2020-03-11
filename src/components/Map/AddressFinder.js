@@ -15,6 +15,7 @@ const AddressFinder = props =>{
           .then(data=>{
                   setCurrentAddress(data.results[0].formatted_address)
           })
+          .catch(error =>setCurrentAddress('Oops! Something went wrong.'))
     return(   
         <SmallData type={'Address'} value = {currentAddress}/>
     );  
