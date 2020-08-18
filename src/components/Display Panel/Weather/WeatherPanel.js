@@ -2,8 +2,8 @@ import React from 'react';
 import IconComp from './IconComp';
 import SmallData from './SmallData';
 import AddressFinder from '../../Map/AddressFinder';
-import { findByLabelText } from '@testing-library/react';
 import DarkSkyImg from  '../../../media/poweredby-oneline-darkbackground.png';
+
 const style = {
   backgroundColor: 'rgba(59, 49, 50,0.5)',
 }

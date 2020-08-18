@@ -15,23 +15,13 @@ import snow from '../src/media/backgrounds/snow.jpg';
 import wind from '../src/media/backgrounds/wind.jpg';
 import partlyCloudyDay from '../src/media/backgrounds/partly-cloudy-day.jpg';
 
-//temporary location, use geolocation later
+//default coordinates
 const defLat = 51.4934;
 const defLng = 0.0098;
 
-
-const mapCompStyle = {
- // height: '40%',
-
-  
-}
-
-
 function App() {
- 
   const [background, setBackground] = useState (clearDay);
   const [coordinates, updateCoordinates] = useState({lat:defLat,lng:defLng});
-
   const updateCoordinatesFromMap = (clickCoordinates) =>{
     updateCoordinates({lat:clickCoordinates.latLng.lat(),lng:clickCoordinates.latLng.lng()})};
 
@@ -81,23 +71,16 @@ function App() {
         break;
       default:
         console.log('no wallpaper')
-
-
     }
-   
   }
-
   return (
       <main className = "container-fluid p-0 align-content-center " style = {style} >
-       
         <div className = '' >
           <Display coordinates={coordinates} changeBackground = {changeBackground}/>
         </div>
-        <div className = 'map-component' style={mapCompStyle} >
-        <MapComponent updateCoordinatesFromMap = {updateCoordinatesFromMap} />
-        
+        <div className = 'map-component'>
+          <MapComponent updateCoordinatesFromMap = {updateCoordinatesFromMap} />
         </div> 
-       
       </main>
   );
 }

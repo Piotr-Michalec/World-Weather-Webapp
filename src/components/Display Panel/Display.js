@@ -1,7 +1,6 @@
 import React from 'react';
 import Weather from './Weather/Weather';
 
-
 const Display = props =>{
     return(
       <div className = 'h-100'>

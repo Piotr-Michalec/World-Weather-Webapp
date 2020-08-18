@@ -18,7 +18,7 @@ const MapComponent = compose(
   withGoogleMap
 )((props) =>
   <GoogleMap
-    defaultZoom={3}
+    defaultZoom={2}
     defaultCenter={{lat: defLat,lng: defLng }}
     //when map is clicked, get click coordinates and pass them to state in App.js
     onClick={(e)=>{props.updateCoordinatesFromMap(e)}}
