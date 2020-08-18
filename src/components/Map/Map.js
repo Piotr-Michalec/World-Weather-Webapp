@@ -1,6 +1,6 @@
-import React, {useState} from "react"
+import React from "react"
 import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps"
 //default map position
 const defLat = 51.4934;
 const defLng = 0.00;
